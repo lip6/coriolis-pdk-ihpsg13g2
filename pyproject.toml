@@ -1,0 +1,21 @@
+
+[build-system]
+build-backend = "mesonpy"
+requires = ["meson-python"]
+
+[project]
+name = "coriolis-pdk-ihpsg13g2"
+version = "2025.07.21"
+authors = [ { name="Krzysztof Herman", email="herman@ihp-microelectronics.com" }
+          , { name="Sergei Andreev"  , email="andreev@ihp-microelectronics.com" }
+          ]
+description = "PDK for IHP SG13S2 process node (130nm)"
+readme = "README.md"
+license = { text="Apache-2.0" }
+keywords = [ "vlsi", "pdk" ]
+classifiers = [ "Development Status :: 3 - Alpha" 
+              , "Programming Language :: Python :: 3.8"
+              ]
+
+[project.urls]
+Homepage = "https://github.com/IHP-GmbH/IHP-Open-PDK.git"

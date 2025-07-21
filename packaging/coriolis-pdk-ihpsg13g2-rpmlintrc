@@ -1,0 +1,15 @@
+
+addFilter("noarch-python-in-64bit-path.*ihpsg13g2.*")
+addFilter("non-executable-script.*ihpsg13g2.*")
+addFilter("script-without-shebang.*ihpsg13g2.*")
+addFilter("env-script-interpreter.*ihpsg13g2.*")
+addFilter("files-duplicated-waste.*ihpsg13g2.*")
+addFilter("filelist-forbidden-noarch.*ihpsg13g2.*")
+addFilter("files-duplicate.*ihpsg13g2.*")
+addFilter("files-duplicated-waste")
+addFilter("version-control-internal-file.*ihpsg13g2.*")
+addFilter("noarch-with-lib64")
+
+setBadness("suse-filelist-forbidden-noarch", 0)
+setBadness("filelist-forbidden-noarch", 0)
+setBadness("version-control-internal-file", 0)
