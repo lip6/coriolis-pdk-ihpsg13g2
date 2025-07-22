@@ -1,0 +1,162 @@
+diff --git a/source/python/cni/instance.py b/source/python/cni/instance.py
+index 29b33b0..d467f24 100644
+--- a/source/python/cni/instance.py
++++ b/source/python/cni/instance.py
+@@ -104,25 +104,24 @@ class Instance():
+         :type orientation: Orientation
+ 
+         """
+-        match orientation:
+-            case Orientation.R0:
+-                transform = pya.DTrans(0, False)
+-            case Orientation.R90:
+-                transform = pya.DTrans(90, False)
+-            case Orientation.R180:
+-                transform = pya.DTrans(180, False)
+-            case Orientation.R270:
+-                transform = pya.DTrans(270, False)
+-            case Orientation.MYR90:
+-                transform = pya.DTrans(90, False) * pya.DTrans.M90
+-            case Orientation.MXR90:
+-                transform = pya.DTrans(90, True)
+-            case Orientation.MY:
+-                transform = pya.DTrans(0, False) * pya.DTrans.M90
+-            case Orientation.MX:
+-                transform = pya.DTrans(0, True)
+-            case _:
+-                raise Exception(f"Unknown orientation '{orientation}'")
++        if orientation == Orientation.R0:
++            transform = pya.DTrans(0, False)
++        elif orientation == Orientation.R90:
++            transform = pya.DTrans(90, False)
++        elif orientation == Orientation.R180:
++            transform = pya.DTrans(180, False)
++        elif orientation == Orientation.R270:
++            transform = pya.DTrans(270, False)
++        elif orientation == Orientation.MYR90:
++            transform = pya.DTrans(90, False) * pya.DTrans.M90
++        elif orientation == Orientation.MXR90:
++            transform = pya.DTrans(90, True)
++        elif orientation == Orientation.MY:
++            transform = pya.DTrans(0, False) * pya.DTrans.M90
++        elif orientation == Orientation.MX:
++            transform = pya.DTrans(0, True)
++        else:
++            raise Exception(f"Unknown orientation '{orientation}'")
+ 
+         Shape.getCell().transform(self._instance, transform)
+ 
+diff --git a/source/python/cni/text.py b/source/python/cni/text.py
+index 6204032..06318b4 100644
+--- a/source/python/cni/text.py
++++ b/source/python/cni/text.py
+@@ -66,34 +66,33 @@ class Text(Shape):
+     def setAlignment(self, location: Location) -> None:
+         width = len(self._text.string) * self._height
+ 
+-        match location:
+-            case Location.LOWER_LEFT:
+-                self._text.halign = pya.HAlign.HAlignLeft
+-                self._text.valign = pya.VAlign.VAlignBottom
+-            case Location.CENTER_LEFT:
+-                self._text.halign = pya.HAlign.HAlignLeft
+-                self._text.valign = pya.VAlign.VAlignCenter
+-            case Location.UPPER_LEFT:
+-                self._text.halign = pya.HAlign.HAlignLeft
+-                self._text.valign = pya.VAlign.VAlignTop
+-            case Location.LOWER_CENTER:
+-                self._text.halign = pya.HAlign.HAlignCenter
+-                self._text.valign = pya.VAlign.VAlignBottom
+-            case Location.CENTER_CENTER:
+-                self._text.halign = pya.HAlign.HAlignCenter
+-                self._text.valign = pya.VAlign.VAlignCenter
+-            case Location.UPPER_CENTER:
+-                self._text.halign = pya.HAlign.HAlignCenter
+-                self._text.valign = pya.VAlign.VAlignTop
+-            case Location.LOWER_RIGHT:
+-                self._text.halign = pya.HAlign.HAlignRight
+-                self._text.valign = pya.VAlign.VAlignBottom
+-            case Location.CENTER_RIGHT:
+-                self._text.halign = pya.HAlign.HAlignRight
+-                self._text.valign = pya.VAlign.VAlignCenter
+-            case Location.UPPER_RIGHT:
+-                self._text.halign = pya.HAlign.HAlignRight
+-                self._text.valign = pya.VAlign.VAlignTop
++        if location == Location.LOWER_LEFT:
++            self._text.halign = pya.HAlign.HAlignLeft
++            self._text.valign = pya.VAlign.VAlignBottom
++        elif location == Location.CENTER_LEFT:
++            self._text.halign = pya.HAlign.HAlignLeft
++            self._text.valign = pya.VAlign.VAlignCenter
++        elif location == Location.UPPER_LEFT:
++            self._text.halign = pya.HAlign.HAlignLeft
++            self._text.valign = pya.VAlign.VAlignTop
++        elif location == Location.LOWER_CENTER:
++            self._text.halign = pya.HAlign.HAlignCenter
++            self._text.valign = pya.VAlign.VAlignBottom
++        elif location == Location.CENTER_CENTER:
++            self._text.halign = pya.HAlign.HAlignCenter
++            self._text.valign = pya.VAlign.VAlignCenter
++        elif location == Location.UPPER_CENTER:
++            self._text.halign = pya.HAlign.HAlignCenter
++            self._text.valign = pya.VAlign.VAlignTop
++        elif location == Location.LOWER_RIGHT:
++            self._text.halign = pya.HAlign.HAlignRight
++            self._text.valign = pya.VAlign.VAlignBottom
++        elif location == Location.CENTER_RIGHT:
++            self._text.halign = pya.HAlign.HAlignRight
++            self._text.valign = pya.VAlign.VAlignCenter
++        elif location == Location.UPPER_RIGHT:
++            self._text.halign = pya.HAlign.HAlignRight
++            self._text.valign = pya.VAlign.VAlignTop
+ 
+         layer = self.getShape().layer
+ 
+diff --git a/source/python/cni/transform.py b/source/python/cni/transform.py
+index b4bd53f..9f41ec2 100644
+--- a/source/python/cni/transform.py
++++ b/source/python/cni/transform.py
+@@ -77,25 +77,24 @@ class Transform(object):
+         self._orientation = orientation
+         self._mag = magnification
+ 
+-        match orientation:
+-            case Orientation.R0:
+-                self._transform = pya.DCplxTrans(magnification, 0, False, x, y)
+-            case Orientation.R90:
+-                self._transform = pya.DCplxTrans(magnification, 90, False, x, y)
+-            case Orientation.R180:
+-                self._transform = pya.DCplxTrans(magnification, 180, False, x, y)
+-            case Orientation.R270:
+-                self._transform = pya.DCplxTrans(magnification, 270, False, x, y)
+-            case Orientation.MYR90:
+-                self._transform = pya.DCplxTrans(magnification, 90, False, x, y) * pya.DCplxTrans.M90
+-            case Orientation.MXR90:
+-                self._transform = pya.DCplxTrans(magnification, 90, True, x, y)
+-            case Orientation.MY:
+-                self._transform = pya.DCplxTrans(magnification, 0, False, x, y) * pya.DCplxTrans.M90
+-            case Orientation.MX:
+-                self._transform = pya.DCplxTrans(magnification, 0, True, x, y)
+-            case _:
+-                raise Exception(f"Unknown orientation '{orientation}'")
++        if orientation == Orientation.R0:
++            self._transform = pya.DCplxTrans(magnification, 0, False, x, y)
++        elif orientation == Orientation.R90:
++            self._transform = pya.DCplxTrans(magnification, 90, False, x, y)
++        elif orientation == Orientation.R180:
++            self._transform = pya.DCplxTrans(magnification, 180, False, x, y)
++        elif orientation == Orientation.R270:
++            self._transform = pya.DCplxTrans(magnification, 270, False, x, y)
++        elif orientation == Orientation.MYR90:
++            self._transform = pya.DCplxTrans(magnification, 90, False, x, y) * pya.DCplxTrans.M90
++        elif orientation == Orientation.MXR90:
++            self._transform = pya.DCplxTrans(magnification, 90, True, x, y)
++        elif orientation == Orientation.MY:
++            self._transform = pya.DCplxTrans(magnification, 0, False, x, y) * pya.DCplxTrans.M90
++        elif orientation == Orientation.MX:
++            self._transform = pya.DCplxTrans(magnification, 0, True, x, y)
++        else:
++            raise Exception(f"Unknown orientation '{orientation}'")
+ 
+     @property
+     def transform(self):
