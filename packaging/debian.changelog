@@ -5,3 +5,10 @@ coriolis-pdk-ihpsg13g2 (2024.10.15) unstable; urgency=low
   * Update control file.
   
   -- Jean-Paul Chaput <Jean-Paul.Chaput@lip6.fr> Tue Jan  7 11:34:17 AM CET 2025
+
+coriolis-pdk-ihpsg13g2 (2025.07.21) unstable; urgency=low
+
+  * Resync PDK with reference repository.
+  * Reference repository is now a submodule (instead of a fork).
+  
+  -- Jean-Paul Chaput <Jean-Paul.Chaput@lip6.fr> Tue Jul 22 11:28:15 AM CEST 2025

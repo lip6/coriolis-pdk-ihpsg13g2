@@ -9,7 +9,7 @@
 %endif
 
 Name:           coriolis-pdk-ihpsg13g2
-Version:        2024.10.15
+Version:        2025.07.21
 Release:        <CI_CNT>.<B_CNT>.bfa7190
 Summary:        IHP Open PDK SG13G2
 License:        Apache-2.0
@@ -17,7 +17,7 @@ License:        Apache-2.0
 Group:          Productivity/Scientific/Electronics
 %endif
 URL:            https://github.com/IHP-GmbH/IHP-Open-PDK
-Source0:        coriolis-pdk-ihpsg13g2-2024.10.15.tar.gz
+Source0:        coriolis-pdk-ihpsg13g2-2025.07.21.tar.gz
 Source1:        venv-al9-2.5.5.tar.gz
 Source2:        patchvenv.sh
 Source10:       %{name}-rpmlintrc
@@ -139,5 +139,9 @@ Summary:        %{summary}
 
 
 %changelog
+* Mon Jul 21 2025 Jean-Paul Chaput <Jean-Paul.Chaput@lip6.fr> - 2025.07.21-1
+- PDK now supplied as a submodule in the sources. 
+- PDK resync with master.
+
 * Wed Nov  6 2024 Jean-Paul Chaput <Jean-Paul.Chaput@lip6.fr> - 2024.10.15-1
 - Initial packaging.

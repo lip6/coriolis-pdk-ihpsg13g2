@@ -1,7 +1,7 @@
 
     venvVersion="2.5.5"
    venvSnapshot="venv-al9-${venvVersion}.tar.gz"
-        version="2024.10.15"
+        version="2025.07.21"
          obsDir="../coriolis-obs/home:jpc-lip6/coriolis-pdk-ihpsg13g2"
 
 
