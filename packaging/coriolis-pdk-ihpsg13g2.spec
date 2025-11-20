@@ -131,7 +131,7 @@ Summary:        %{summary}
 
 
 %files -n python%{python3_pkgversion}-coriolis-pdk-ihpsg13g2
-%doc AUTHORS CHANGELOG.md README.md CODE_OF_CONDUCT.md CONTRIBUTING.md
+%doc IHP-Open-PDK/AUTHORS IHP-Open-PDK/CHANGELOG.md IHP-Open-PDK/README.md IHP-Open-PDK/CODE_OF_CONDUCT.md IHP-Open-PDK/CONTRIBUTING.md
 %license LICENSE
 %dir %{python3_sitearch}/pdks
 %{python3_sitearch}/pdks/ihpsg13g2
