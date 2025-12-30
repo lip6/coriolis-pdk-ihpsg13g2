@@ -2,10 +2,10 @@ Format:            1.0
 Source:            coriolis-pdk-ihpsg13g2
 Binary:            coriolis-pdk-ihpsg13g2
 Architecture:      any
-Version:           2025.07.21
+Version:           2025.12.27
 Maintainer:        Jean-Paul.Chaput <Jean-Paul.Chaput@lip6.fr>
 Homepage:          https://coriolis.lip6.fr/
-Standards-Version: 2025.07.21
+Standards-Version: 2025.12.27
 Build-Depends:     debhelper-compat (= 13),
                    pkg-config,
                    ninja-build,
@@ -18,4 +18,4 @@ Build-Depends:     debhelper-compat (= 13),
 Package-List:
  coriolis-pdk-ihpsg13g2     deb Science/Electronics optional arch=any
 DEBTRANSFORM-RELEASE:   1
-DEBTRANSFORM-TAR:       coriolis-pdk-ihpsg13g2-2025.07.21.tar.gz
+DEBTRANSFORM-TAR:       coriolis-pdk-ihpsg13g2-2025.12.27.tar.gz

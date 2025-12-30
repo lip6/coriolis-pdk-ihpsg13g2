@@ -1,0 +1,14 @@
+diff --git a/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py b/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py
+index f512e20..4b18746 100644
+--- a/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py
++++ b/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py
+@@ -15,7 +15,7 @@ import klayout.db
+ LIB = 'SG13_dev'
+ PCELL = 'sealring'
+ 
+-def generate_sealring(width: float, heigth: float, input: str | None, output: str, offset_x: float, offset_y: float):
++def generate_sealring(width: float, heigth: float, input: None, output: str, offset_x: float, offset_y: float):
+     """Function to create a new layout, add the sealring PCell to sealring_top
+     and save it somewhere on the filesystem.
+ 
+
