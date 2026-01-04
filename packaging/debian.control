@@ -11,6 +11,7 @@ Build-Depends: debhelper-compat (= 13),
                python3-pip,
                python3-pip-whl,
                openvaf,
+Depends:       klayout (>= 0.30.3),
 Standards-Version: 2025.12.27
 Homepage: https://coriolis.lip6.fr/
 Rules-Requires-Root: no

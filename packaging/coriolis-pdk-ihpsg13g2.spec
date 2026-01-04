@@ -35,6 +35,7 @@ Source10:       %{name}-rpmlintrc
 
 BuildArch:      x86_64
 Requires:       coriolis-eda
+Requires:       klayout >= 0.30.3
 BuildRequires:  openvaf
 %if 0%{?rhel} || 0%{?fedora}
 BuildRequires:  ninja-build
