@@ -10,6 +10,8 @@ py_deps  = dependency( 'python3', required: true )
 pdks_dir = py.get_install_dir() / 'pdks' / 'ihpsg13g2'
 openvaf  = find_program( 'openvaf' )
 
+run_command( 'patch', '-d', 'IHP-Open-PDK', '-p1', '-i', '../packaging/python-no-typehints.patch', check:false )
+
 ref_dir  = 'IHP-Open-PDK/ihp-sg13g2/libs.ref'
 tech_dir = 'IHP-Open-PDK/ihp-sg13g2/libs.tech'
 
